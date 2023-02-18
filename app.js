@@ -29,10 +29,6 @@ function addTodo(event) {
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
   saveLocalTodos(todoInput.value);
-  const inprogBtn = document.createElement("button");
-  inprogBtn.innerHTML = '<i class="fa-solid fa-play"</i>';
-  inprogBtn.classList.add("progress-btn");
-  todoDiv.appendChild(inprogBtn);
   const completedButton = document.createElement("button");
   completedButton.innerHTML = '<i class="fas fa-check"></i>';
   completedButton.classList.add("complete-btn");
@@ -59,11 +55,6 @@ function deleteCheck(e) {
     const todo = item.parentElement;
     todo.classList.toggle("completed");
   }
-
-  if (item.classList[0] === "progress-btn") {
-    const todo = item.parentElement;
-    todo.classList.toggle("in-progress");
-  }
 }
 
 function filterTodo(e) {
@@ -86,13 +77,6 @@ function filterTodo(e) {
         } else {
           todo.style.display = "none";
         }
-      case "in-progress":
-        if (todo.classList.contains("in-progress")) {
-          todo.style.display = "flex";
-        } else {
-          todo.style.display = "none";
-        }
-        break;
     }
   });
 }
