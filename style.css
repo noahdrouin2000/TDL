@@ -6,12 +6,13 @@
 
 #body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
+  background-size: 400vw 400vw;
   animation: gradient 15s ease infinite;
   color: white;
   font-family: "Poppins";
-  min-height: 100vh;
-  overscroll-behavior-y: none;
+  overscroll-behavior: none;
+  width: 100vw;
+  overflow-x: none;
 }
 
 @keyframes gradient {
@@ -27,17 +28,17 @@
 }
 
 header {
-  margin-top: 4rem;
+  margin-top: 3vw;
 }
 
 .title {
-  font-size: 5rem;
+  font-size: 4vw;
   cursor: pointer;
 }
 
 header,
 form {
-  min-height: 20vh;
+  height: 10vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,8 +46,8 @@ form {
 
 form input,
 form button {
-  padding: 0.5rem;
-  font-size: 2.5rem;
+  padding: 0.2vw;
+  font-size: 2vw;
   border: none;
   background: white;
 }
@@ -71,14 +72,15 @@ form button:hover {
 
 .todo-list {
   list-style: none;
-  min-width: 30%;
+  width: 35vw;
+  margin: 1vw 0;
 }
 
 .todo {
-  margin: 0.5rem;
+  margin: 0.4vw;
   background: white;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,31 +92,25 @@ form button:hover {
 }
 
 .trash-btn,
-.complete-btn,
-.progress-btn {
+.complete-btn {
   background: #d63929;
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 0.75vw;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.75vw;
 }
 
 .complete-btn {
   background: #6fd629;
 }
 
-.progress-btn {
-  background: #e8e717;
-}
-
 .todo-item {
-  padding: 0rem 0.5rem;
+  padding: 0rem 0.4vw;
 }
 
 .fa-trash,
-.fa-check,
-.fa-play {
+.fa-check {
   pointer-events: none;
 }
 
@@ -128,7 +124,7 @@ form button:hover {
 }
 
 .fall {
-  transform: translateY(8rem) rotateZ(20deg);
+  transform: translateY(6vw) rotateZ(20deg);
   opacity: 0;
 }
 
@@ -139,15 +135,19 @@ select {
   outline: none;
   border: none;
   color: #54d1de;
-  width: 10rem;
+  width: 10vw;
+  height: 2.5vw;
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.75vw;
+  font-size: 1vw;
 }
 
 .select {
-  margin: 1rem;
+  margin: 0.75vw;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: start;
 }
 
 .select::after {
@@ -156,7 +156,8 @@ select {
   background-color: #54d1de;
   top: 0;
   right: 0;
-  padding: 0.6rem;
+  height: 2.5vw;
+  padding: 0.8vw;
   pointer-events: none;
   transition: all 0.3s ease;
 }
@@ -166,29 +167,265 @@ select {
   color: #54d1de;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1440px) {
+  header {
+    margin-top: 4vw;
+  }
   .title {
-    font-size: 3rem;
+    font-size: 5vw;
+  }
+  header,
+  form {
+    height: 11vw;
   }
   form input,
   form button {
-    font-size: 1.75rem;
+    padding: 0.3vw;
+    font-size: 2.5vw;
+  }
+  .todo {
+    margin: 0.5vw;
+    font-size: 1.4vw;
+    height: 3vw;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 0.75vw;
+    font-size: 1.35vw;
+  }
+  .todo-item {
+    padding: 0 0.6vw;
+  }
+  select {
+    width: 13vw;
+    padding: 0.75vw;
+    font-size: 1.4vw;
+    height: 3.5vw;
+  }
+  .select {
+    margin: 1vw;
+  }
+  .select::after {
+    font-size: 1.2vw;
+    padding: 1vw;
+    height: 3.5vw;
   }
 }
 
-@media screen and (max-width: 585px) {
+@media screen and (max-width: 1024px) {
+  header {
+    margin-top: 5vw;
+  }
   .title {
-    font-size: 2.5rem;
+    font-size: 6.5vw;
+  }
+  header,
+  form {
+    height: 15vw;
   }
   form input,
   form button {
-    font-size: 1.25rem;
+    padding: 0.5vw;
+    font-size: 3vw;
+  }
+  .todo-input {
+    width: 40vw;
+  }
+  .todo-list {
+    width: 45vw;
+  }
+  .todo {
+    margin: 0.75vw;
+    font-size: 1.6vw;
+    height: 3.5vw;
+    width: 100%;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 0.7vw;
+    font-size: 1.9vw;
+  }
+  .todo-item {
+    padding: 0 1vw;
   }
   select {
-    width: 7rem;
+    width: 15vw;
+    font-size: 1.6vw;
+    height: 4.5vw;
+  }
+  .select {
+    margin: 1.25vw;
+  }
+  .select::after {
+    font-size: 1.4vw;
+    padding: 1.3vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    margin-top: 9vw;
+  }
+  .title {
+    font-size: 8vw;
+  }
+  form input,
+  form button {
+    padding: 0.75vw;
+    font-size: 3.25vw;
+  }
+  .todo-input {
+    width: 45vw;
+  }
+  .todo-list {
+    width: 60vw;
+  }
+  .todo {
+    margin: 1vw;
+    font-size: 2.3vw;
+    height: 5vw;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 1.125vw;
+    font-size: 2.5vw;
+  }
+  .todo-item {
+    padding: 0 1.5vw;
   }
   select {
-    font-size: 0.65rem;
-    padding: 0.8rem 0.5rem;
+    width: 17vw;
+    font-size: 1.9vw;
+    height: 5vw;
+  }
+  .select {
+    margin: 1.5vw;
+  }
+  .select::after {
+    font-size: 1.4vw;
+    padding: 1.3vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  header {
+    margin-top: 12vw;
+  }
+  .title {
+    font-size: 9vw;
+  }
+  form input,
+  form button {
+    padding: 1vw;
+    font-size: 4.5vw;
+  }
+  .todo-input {
+    width: 55vw;
+  }
+  .todo-list {
+    width: 70vw;
+  }
+  .todo {
+    margin: 1.25vw;
+    font-size: 2.75vw;
+    height: 6.5vw;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 1.5vw;
+    font-size: 3.1vw;
+  }
+  .todo-item {
+    padding: 0 2vw;
+  }
+  select {
+    width: 19vw;
+    font-size: 2.1vw;
+    height: 6.5vw;
+  }
+  .select {
+    margin: 1.5vw;
+  }
+  .select::after {
+    font-size: 2.25vw;
+    padding: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  header {
+    margin-top: 18vw;
+  }
+  .title {
+    font-size: 10vw;
+  }
+  form input,
+  form button {
+    padding: 1.1vw;
+    font-size: 4.5vw;
+  }
+  .todo-input {
+    width: 60vw;
+  }
+  .todo-list {
+    width: 75vw;
+  }
+  .todo {
+    margin: 1.5vw;
+    font-size: 3vw;
+    height: 7vw;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 1.5vw;
+    font-size: 3.6vw;
+  }
+  .select::after {
+    padding: 1.6vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    margin-top: 20vw;
+  }
+  form input,
+  form button {
+    padding: 1.25vw;
+    font-size: 4.75vw;
+  }
+  .todo-input {
+    width: 65vw;
+  }
+  .todo {
+    font-size: 3.5vw;
+    height: 8vw;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 1.65vw;
+    font-size: 4.25vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header {
+    margin-top: 22vw;
+  }
+  .title {
+    font-size: 11vw;
+  }
+  form input,
+  form button {
+    padding: 1vw;
+    font-size: 4.5vw;
+  }
+  .todo {
+    height: 8.5vw;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 1.7vw;
+    font-size: 4.5vw;
   }
 }
